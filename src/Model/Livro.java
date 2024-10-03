@@ -31,7 +31,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public boolean isDisponivel() {
+    public boolean getDisponivel() {
         return this._isdisponivel;
     }
 
