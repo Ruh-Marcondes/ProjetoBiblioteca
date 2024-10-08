@@ -15,6 +15,10 @@ public class Aluno extends Usuario{
         this.curso = curso;
         this.matricula = matricula;
     }
+
+    public Aluno(){
+        
+    }
     
 
     public String getMatricula() {

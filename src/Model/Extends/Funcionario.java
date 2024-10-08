@@ -15,6 +15,9 @@ public class Funcionario extends Usuario {
         this.cargo = cargo;
         this.setor = setor;
     }
+    public Funcionario(){
+        
+    }
 
     public String getCargo() {
         return this.cargo;

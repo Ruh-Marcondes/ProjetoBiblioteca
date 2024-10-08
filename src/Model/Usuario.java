@@ -16,6 +16,9 @@ public abstract class Usuario {
         this.email = email;
     }
 
+    public Usuario(){
+        
+    }
 
     //Getters and Setters
     public int getIdUsuario() {

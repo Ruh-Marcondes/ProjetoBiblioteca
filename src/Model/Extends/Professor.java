@@ -16,6 +16,9 @@ public class Professor extends Usuario {
         this.titulacao = titulacao;
     }
 
+    public Professor(){
+        
+    }
     public void setDepartamento(String departamento){
         this.departamento = departamento;
     }

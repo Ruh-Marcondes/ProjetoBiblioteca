@@ -4,29 +4,29 @@ import java.time.LocalDate;
 
 public class ControleEmprestimo {
     
-    public static RegistroEmprestimo(int idEmprestimo, Usuario user, Livro book, LocalDate dataEmprestimo, LocalDate  dataDevolucao);
+    public ControleEmprestimo(){
 
-
-    /**
-     * @param user
-     * @param book
-     * @return
-     */
-    public static String registraemprestimo(Usuario user, Livro book){
-
-    RegistroEmprestimo rg = new RegistroEmprestimo(book.getIdLivro();, , null, null, null);
-
-        if(!book.getDisponivel()){
-            return "\n Não disponivel para emprestimo";
-        }
-
-        
+    }
     
-        return "\'-\'";
+    public String registraEmprestimo(Usuario usuario, Livro livro) {
+       
+    
+        if(!livro.getDisponivel()) return "!-!";
+        LocalDate dataEmprestimo = LocalDate.now();
+        RegistroEmprestimo registro = new RegistroEmprestimo(0, usuario, livro, dataEmprestimo, null);
+        livro.setDisponivel(false);
+        
+        return "Empréstimo registrado com sucesso:\n";
     }
 
-    public static String registradevolucao(Usuario user, Livro book){
-
-        return "\'-\'"; 
+    public String registraDevolucao(Usuario usuario, Livro livro) {
+       
+    
+        if(livro.getDisponivel()) return "!-!";
+        LocalDate dataDevolucao = LocalDate.now();
+        RegistroEmprestimo registro = new RegistroEmprestimo(0, usuario, livro, null, dataDevolucao);
+        livro.setDisponivel(true);
+        
+        return "Empréstimo registrado com sucesso:\n";
     }
 }

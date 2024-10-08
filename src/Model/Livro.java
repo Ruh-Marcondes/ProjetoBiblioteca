@@ -46,5 +46,8 @@ public class Livro {
         this.autor = autor;
         this._isdisponivel = disponivel;
     }
+    public Livro(){
+        
+    }
 
 }
