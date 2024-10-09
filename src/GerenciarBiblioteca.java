@@ -1,13 +1,13 @@
 import Model.ControleEmprestimo;
 import Model.Livro;
-import Model.RegistroEmprestimo;
-import Model.Usuario;
 import Model.Extends.Aluno;
 import Model.Extends.Funcionario;
 import Model.Extends.Professor;
 
 public class GerenciarBiblioteca {
     public static void main(String[] args) throws Exception {
+
+       
      
           Aluno aluno = new Aluno();
         aluno.setIdUsuario(1);
@@ -52,42 +52,15 @@ public class GerenciarBiblioteca {
         // Controlador de empréstimos
         ControleEmprestimo controleEmprestimo = new ControleEmprestimo();
 
-        // Registrando empréstimos
-        RegistroEmprestimo emprestimo1 = controleEmprestimo.registraEmprestimo(aluno, livro1);
-        RegistroEmprestimo emprestimo2 = controleEmprestimo.registraEmprestimo(professor, livro2);
-        RegistroEmprestimo emprestimo3 = controleEmprestimo.registraEmprestimo(funcionario, livro3);
+      // Registrando empréstimos e imprimindo o retorno
+      System.out.println(controleEmprestimo.registraEmprestimo(aluno, livro1));
+      System.out.println(controleEmprestimo.registraEmprestimo(professor, livro2));
+      System.out.println(controleEmprestimo.registraEmprestimo(funcionario, livro3));
 
-        // Exibindo detalhes dos empréstimos
-        System.out.println("Empréstimos Registrados:");
-        exibirDetalhesEmprestimo(emprestimo1,aluno,livro1);
-        exibirDetalhesEmprestimo(emprestimo2,professor,livro2);
-        exibirDetalhesEmprestimo(emprestimo3,funcionario,livro3);
-
-        // Registrando devoluções
-        controleEmprestimo.registraDevolucao(aluno, livro1);
-        controleEmprestimo.registraDevolucao(professor, livro2);
-        controleEmprestimo.registraDevolucao(funcionario, livro3);
-
-        // Exibindo detalhes das devoluções
-        System.out.println("\nDevoluções Registradas:");
-        exibirDetalhesDevolucao(emprestimo1,aluno,livro1);
-        exibirDetalhesDevolucao(emprestimo2,professor,livro2);
-        exibirDetalhesDevolucao(emprestimo3,funcionario,livro3);
-        
-    }
-    private static void exibirDetalhesEmprestimo(RegistroEmprestimo emprestimo, Usuario user, Livro book) {
-       
-        System.out.println("Empréstimo:");
-        System.out.println("Usuário: " + user.getNome());
-        System.out.println("Livro: " + book.getTitulo());
-        // Adicione mais detalhes conforme necessário
-    }
-    
-    private static void exibirDetalhesDevolucao(RegistroEmprestimo emprestimo, Usuario user, Livro book) {
-        System.out.println("Devolução:");
-        System.out.println("Usuário: " + user.getNome());
-        System.out.println("Livro: " + book.getTitulo());
-        // Adicione mais detalhes conforme necessário
+      // Registrando devoluções e imprimindo o retorno
+      System.out.println(controleEmprestimo.registraDevolucao(aluno, livro1));
+      System.out.println(controleEmprestimo.registraDevolucao(professor, livro2));
+      System.out.println(controleEmprestimo.registraDevolucao(funcionario, livro3));        
     }
     
 }
